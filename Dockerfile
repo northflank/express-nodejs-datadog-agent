@@ -24,7 +24,7 @@ RUN apt-get update && apt-get -y --force-yes install --reinstall datadog-agent
 EXPOSE 8125/udp 8126/tcp
 
 COPY entrypoint.sh /
-COPY datadog.yaml /etc/datadog-agent/
+COPY datadog-agent/ /etc/datadog-agent/
 
 RUN chmod +x /entrypoint.sh
 
