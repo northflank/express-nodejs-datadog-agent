@@ -25,6 +25,8 @@ EXPOSE 8125/udp 8126/tcp
 
 COPY entrypoint.sh /
 
+RUN chmod +x /entrypoint.sh
+
 RUN mkdir -p /app
 WORKDIR /app
 
@@ -35,5 +37,5 @@ RUN yarn install
 COPY . .
 
 EXPOSE 80
-ENTRYPOINT ["bash -c"]
+ENTRYPOINT ["bash"]
 CMD [ "/entrypoint.sh" ]
