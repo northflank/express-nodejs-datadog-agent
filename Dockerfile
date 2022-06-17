@@ -23,6 +23,8 @@ RUN apt-get update && apt-get -y --force-yes install --reinstall datadog-agent
 # Expose DogStatsD and trace-agent ports
 EXPOSE 8125/udp 8126/tcp
 
+COPY entrypoint.sh /
+
 RUN mkdir -p /app
 WORKDIR /app
 
@@ -33,4 +35,4 @@ RUN yarn install
 COPY . .
 
 EXPOSE 80
-CMD [ "yarn", "run", "start" ]
+CMD [ "/entrypoint.sh" ]
