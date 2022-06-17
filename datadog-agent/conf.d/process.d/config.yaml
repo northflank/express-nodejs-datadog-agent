@@ -1,0 +1,6 @@
+init_config:
+
+instances:
+- name: app
+  search_string:
+  - node
