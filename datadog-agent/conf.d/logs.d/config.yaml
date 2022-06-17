@@ -1,17 +1,17 @@
 logs:
 - type: file
-  path: "/var/logs/agent.log"
+  path: "/var/log/agent.log"
   service: "dd-agent"
   source: "dd-agent"
 - type: file
-  path: "/var/logs/trace-agent.log"
+  path: "/var/log/trace-agent.log"
   service: "dd-trace-agent"
   source: "dd-agent"
 - type: file
-  path: "/var/logs/process-agent.log"
+  path: "/var/log/process-agent.log"
   service: "dd-process-agent"
   source: "dd-agent"
 - type: file
-  path: "/var/logs/app.log"
+  path: "/var/log/app.log"
   service: "app"
   source: "app"

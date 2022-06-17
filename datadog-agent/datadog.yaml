@@ -1,4 +1,11 @@
 cloud_provider_metadata: []
 
 logs_enabled: true
+logs_config:
+  container_collect_all: false
 
+process_config:
+  process_collection:
+    enabled: true
+  container_collection:
+    enabled: false
