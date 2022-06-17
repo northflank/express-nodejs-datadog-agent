@@ -1,5 +1,6 @@
 FROM node:12-buster-slim AS builder
 
+# ===== START DATADOG INSTALL =====
 # Install GPG dependencies
 RUN apt-get update \
  && apt-get install -y gnupg apt-transport-https gpg-agent curl ca-certificates
@@ -27,7 +28,9 @@ COPY entrypoint.sh /
 COPY datadog-agent/ /etc/datadog-agent/
 
 RUN chmod +x /entrypoint.sh
+# ===== END DATADOG INSTALL =====
 
+# Normal nodejs install
 RUN mkdir -p /app
 WORKDIR /app
 
