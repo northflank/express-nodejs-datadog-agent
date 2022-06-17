@@ -35,4 +35,5 @@ RUN yarn install
 COPY . .
 
 EXPOSE 80
+ENTRYPOINT ["bash -c"]
 CMD [ "/entrypoint.sh" ]
